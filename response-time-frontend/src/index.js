@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", init)
+const startUp = new ApiAdapter;
 
 function init() {
-    // makes initial get fetch to get all existing data for police depts
+    startUp.fetchPd("police_departments")
+    .then(pds => {
+        pds.forEach(pd => {
+            newPd = new PoliceDepartment(pd);
+            newPd.renderName;
+        });
+    });
 }
