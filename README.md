@@ -3,7 +3,6 @@
     - State
     - City
     - Name
-    - Police Chief
     - Address
     - Phone Number
     - Overall Rating ?
