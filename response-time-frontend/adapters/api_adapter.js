@@ -7,4 +7,9 @@ class ApiAdapter {
         return fetch(`${this.baseUrl}/${url}`)
         .then(response => response.json())
     }
+
+    fetchPdDetails(url) {
+        return fetch(`${this.baseUrl}/police_departments/${url}`)
+        .then(response => response.json())
+    }
 }
