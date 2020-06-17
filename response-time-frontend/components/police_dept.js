@@ -10,11 +10,10 @@ class PoliceDepartment {
     }
 
     get renderName() {
-        const li = document.createElement("li");
-        li.setAttribute("data-id", this.id);
-        li.innerText = this.name;
-
-        const ul = document.getElementById("sidebar-ul");
-        return ul.appendChild(li);
+        const stateDiv = document.getElementById(`${this.state}`);
+        const p = document.createElement("p");
+        p.setAttribute("data-id", this.id);
+        p.innerText = this.name;        
+        return stateDiv.appendChild(p);
     }
 }
