@@ -11,6 +11,7 @@ function init() {
             newPd = new PoliceDepartment(pd);
             newPd.renderName;
         });
+        getPdDetailInfo();
     });
 }
 
@@ -48,3 +49,20 @@ function populateSidebar(statesArray) {
         return div;
     })
 }
+
+function getPdDetailInfo() {
+    const pTags = Array.from(document.getElementsByClassName("departments"));
+    
+    pTags.map(p => {
+        p.addEventListener("click", (e) => {
+            const pdId = e.target.dataset.id;
+            const apiShow = new ApiAdapter;
+            apiShow.fetchPdDetails(pdId)
+            .then(pd => {
+                newPd = new PoliceDepartment(pd)
+                newPd.detailView;       
+            })
+        })
+    })
+}
+
