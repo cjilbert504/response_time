@@ -32,10 +32,11 @@ class PoliceDepartment {
         const h5 = document.createElement("h3");
         
         div.setAttribute("class", "centerWindow");
+
         
         this.reviews.map(review => {
-            const reviewPTag = document.createElement("p");
-            reviewPTag.innerText = `${review.commentor} says: ${review.comment}`
+            const newReview = new Review(review);
+            const reviewPTag = newReview.reviewDivMaker;
             reviewDiv.appendChild(reviewPTag);
             return reviewDiv;
         })
