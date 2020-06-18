@@ -25,6 +25,7 @@
 }
 
 .sidebar {
+  font-family: Arial;
   height: 100%;
   width: 160px;
   position: fixed;
@@ -52,6 +53,8 @@
 
 /* Style the main content */
 .main {
+  font-family: Arial;
+  font-weight: bold;
   margin-left: 160px; /* Same as the width of the sidenav */
   padding: 0px 10px;
 }
@@ -63,6 +66,7 @@
 }
 
 .centerWindow {
+  font-family: Arial;
   text-align: center;
   border: solid;
   border-radius: 25px;
@@ -72,5 +76,6 @@
 
 .accordionBtn {
   background-color: #2874A6;
+  border-radius: 20px;
   color: white;
 }
