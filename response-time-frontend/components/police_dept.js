@@ -24,13 +24,22 @@ class PoliceDepartment {
     get detailView() {
         const main = document.getElementById("main");
         const div = document.createElement("div");
-        div.setAttribute("class", "centerWindow");
+        const reviewDiv = document.createElement("div");
         const h1 = document.createElement("h1");
         const h2 = document.createElement("h3");
         const h3 = document.createElement("h3");
         const h4 = document.createElement("h3");
         const h5 = document.createElement("h3");
         
+        div.setAttribute("class", "centerWindow");
+        
+        this.reviews.map(review => {
+            const reviewPTag = document.createElement("p");
+            reviewPTag.innerText = `${review.commentor} says: ${review.comment}`
+            reviewDiv.appendChild(reviewPTag);
+            return reviewDiv;
+        })
+
         h1.innerText = this.name;
         h2.innerText = this.address;
         h3.innerText = `${this.city}, ${this.state}`;
@@ -41,6 +50,8 @@ class PoliceDepartment {
         div.appendChild(h3);
         div.appendChild(h5);
         main.appendChild(div);
+        main.appendChild(reviewDiv);
         return main;
     }
 }
+
