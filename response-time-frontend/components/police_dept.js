@@ -12,33 +12,35 @@ class PoliceDepartment {
     get renderName() {
         const stateDiv = document.getElementById(`${this.state}`);
         const p = document.createElement("p");
+        const hr = document.createElement("hr");
 
         p.setAttribute("data-id", this.id);
         p.setAttribute("class", "departments");
-        p.innerText = this.name;        
+        p.innerText = this.name; 
+        p.appendChild(hr);       
         return stateDiv.appendChild(p);
     }
 
     get detailView() {
         const main = document.getElementById("main");
-        const ul = document.createElement("ul");
-        const li1 = document.createElement("li");
-        const li2 = document.createElement("li");
-        const li3 = document.createElement("li");
-        const li4 = document.createElement("li");
-        const li5 = document.createElement("li");
+        const div = document.createElement("div");
+        div.setAttribute("class", "centerWindow");
+        const h1 = document.createElement("h1");
+        const h2 = document.createElement("h3");
+        const h3 = document.createElement("h3");
+        const h4 = document.createElement("h3");
+        const h5 = document.createElement("h3");
         
-        li1.innerText = this.name;
-        li2.innerText = this.address;
-        li3.innerText = this.city;
-        li4.innerText = this.state;
-        li5.innerText = this.phone_number;
+        h1.innerText = this.name;
+        h2.innerText = this.address;
+        h3.innerText = `${this.city}, ${this.state}`;
+        h5.innerText = this.phone_number;
 
-        main.appendChild(li1);
-        main.appendChild(li2);
-        main.appendChild(li3);
-        main.appendChild(li4);
-        main.appendChild(li5);
+        div.appendChild(h1);
+        div.appendChild(h2);
+        div.appendChild(h3);
+        div.appendChild(h5);
+        main.appendChild(div);
         return main;
     }
 }

@@ -42,6 +42,7 @@ function populateSidebar(statesArray) {
         innerDiv.setAttribute("class", "panel");
         innerDiv.setAttribute("id", state);
         innerBtn.innerText = "Add a new police department";
+        innerBtn.setAttribute("class", "accordionBtn");
 
         innerDiv.appendChild(innerBtn);
         div.appendChild(btn);
