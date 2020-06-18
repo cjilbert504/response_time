@@ -3,6 +3,7 @@ const startUp = new ApiAdapter;
 const states = ["Alabama", "Louisiana"];
 
 function init() {
+    handleForm();
     populateSidebar(states);
     expandSidebarBtns();
     startUp.fetchPd("police_departments")
@@ -65,5 +66,13 @@ function getPdDetailInfo() {
             })
         })
     })
+}
+
+function handleForm() {
+    let form = document.getElementById("submit");
+    form.addEventListener("submit", function(event){
+        event.preventDefault();
+        console.log(event.target[0].value);    
+      });
 }
 
