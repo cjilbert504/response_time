@@ -61,6 +61,11 @@ function getPdDetailInfo() {
             const apiShow = new ApiAdapter;
             apiShow.fetchPdDetails(pdId)
             .then(pd => {
+                const cardDiv = document.getElementById("cardDiv");
+                if (cardDiv) {
+                    const main = document.getElementById("main");
+                    main.removeChild(cardDiv);
+                }
                 newPd = new PoliceDepartment(pd)
                 newPd.detailView;       
             })
