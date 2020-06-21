@@ -32,6 +32,9 @@ class PoliceDepartment {
         const h5 = document.createElement("h3");
         
         div.setAttribute("class", "centerWindow");
+        div.setAttribute("id", "cardDiv");
+        div.style.display = "block";
+        
 
         
         this.reviews.map(review => {
