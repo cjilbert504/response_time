@@ -74,7 +74,8 @@
   border: solid;
   border-radius: 25px;
   box-shadow: 10px 10px 5px grey;
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
+  background-color: rgb(253, 251, 239);
 }
 
 .accordionBtn {
@@ -89,6 +90,8 @@
   font-family: 'Arimo', sans-serif;
   border-style: solid;
   border-color: grey;
+  border-width: 1px;
+  box-shadow: 10px 10px 5px grey;
   border-radius: 30px;
   margin: 40px 40px 0px 0px;
   padding: 10px 10px 10px 10px;
@@ -148,11 +151,15 @@
 .reviews {
   display: none;
   float: left;
-  text-align: center;
+  text-align: left;
   font-family: 'Arimo', sans-serif;
+  font-weight: 100;
   border-style: solid;
   border-color: grey;
+  border-width: 1px;
+  box-shadow: 10px 10px 5px grey;
   border-radius: 10px;
   margin: 20px 40px 0px 0px;
+  padding-left: 10px;
   width: 675px;
 }
