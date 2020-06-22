@@ -97,6 +97,7 @@
   margin: 40px 40px 0px 0px;
   padding: 10px 10px 10px 10px;
   display: none;
+  background-color: rgb(253, 251, 239);
 }
 
 .form-div {
@@ -128,7 +129,7 @@
 
 .form-heading-label {
   position: relative;
-  bottom: 10px;
+  bottom: 0px;
   font-weight: 400;
   font-size: 30px;
 }
@@ -163,8 +164,25 @@
   margin: 20px 40px 0px 0px;
   padding-left: 10px;
   width: 675px;
+  background-color: rgb(253, 251, 239);
 }
 
 .departments:hover {
   transform: scale(1.1);
+}
+
+.accordionBtn:hover {
+  animation-name: background-color;
+  animation-duration: 250ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes background-color {
+  100% {
+    background-color: #4791d0;
+  }
+}
+
+body {
+  background-image: url('response-time.png');
 }
