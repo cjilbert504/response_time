@@ -87,12 +87,12 @@
   text-align: center;
   font-weight: bold;
   font-family: 'Arimo', sans-serif;
-  /* font-size: 30px; */
   border-style: solid;
   border-color: grey;
   border-radius: 30px;
-  margin: 0px 40px 0px 0px;
+  margin: 40px 40px 0px 0px;
   padding: 10px 10px 10px 10px;
+  display: none;
 }
 
 .form-div {
