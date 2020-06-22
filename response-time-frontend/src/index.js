@@ -67,8 +67,10 @@ function getPdDetailInfo() {
                     const main = document.getElementById("main");
                     const form = document.getElementById("submit");
                     const hiddenField = document.getElementById("hidden");
+                    const reviewDiv = document.getElementById("reviews");
 
                     main.removeChild(cardDiv);
+                    main.removeChild(reviewDiv);
                     form.removeChild(hiddenField);
                 }
                 newPd = new PoliceDepartment(pd)
