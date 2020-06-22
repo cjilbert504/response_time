@@ -144,3 +144,15 @@
   font-weight: 400;
   font-size: 24px;
 }
+
+.reviews {
+  display: none;
+  float: left;
+  text-align: center;
+  font-family: 'Arimo', sans-serif;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 10px;
+  margin: 20px 40px 0px 0px;
+  width: 675px;
+}
