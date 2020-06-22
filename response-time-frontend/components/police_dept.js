@@ -23,39 +23,68 @@ class PoliceDepartment {
 
     get detailView() {
         const main = document.getElementById("main");
-        const div = document.createElement("div");
-        const reviewDiv = document.createElement("div");
-        const h1 = document.createElement("h1");
-        const h2 = document.createElement("h3");
-        const h3 = document.createElement("h3");
-        const h4 = document.createElement("h3");
-        const h5 = document.createElement("h3");
+        const div = createCardDiv();
+        const h1 = this.createH1;
+        const h2 = this.createH2;
+        const h3 = this.createH3;
+        const h5 = this.createH5;
         
-        div.setAttribute("class", "centerWindow");
-        div.setAttribute("id", "cardDiv");
-        div.style.display = "block";
+        const hArray = [];
+        hArray.push(h1, h2, h3, h5, reviewDiv);
+        hArray.forEach(h => div.appendChild(h));
         
+        main.appendChild(div);
+        // const reviewDiv = this.showReviews; 
+        // main.appendChild(reviewDiv);
+        return main;
+    }
 
-        
+    get createH1() {
+        const h1 = document.createElement("h1");
+        h1.innerText = this.name;
+        return h1;
+    }
+
+    get createH2() {
+        const h2 = document.createElement("h2");
+        h2.innerText = this.address;
+        return h2;
+    }
+
+    get createH3() {
+        const h3 = document.createElement("h3");
+        h3.innerText = `${this.city}, ${this.state}`;
+        return h3;
+    }
+
+    get createH5() {
+        const h5 = document.createElement("h5");
+        h5.innerText = this.phone_number;
+        return h5;
+    }
+
+    get showReviews() {
+        const reviewDiv = document.createElement("div");
+
         this.reviews.map(review => {
             const newReview = new Review(review);
             const reviewPTag = newReview.reviewDivMaker;
             reviewDiv.appendChild(reviewPTag);
-            return reviewDiv;
-        })
-
-        h1.innerText = this.name;
-        h2.innerText = this.address;
-        h3.innerText = `${this.city}, ${this.state}`;
-        h5.innerText = this.phone_number;
-
-        div.appendChild(h1);
-        div.appendChild(h2);
-        div.appendChild(h3);
-        div.appendChild(h5);
-        main.appendChild(div);
-        main.appendChild(reviewDiv);
-        return main;
+        })        
+        return reviewDiv;
     }
+
 }
+
+
+
+function createCardDiv() {
+    const div = document.createElement("div");
+    div.setAttribute("class", "centerWindow");
+    div.setAttribute("id", "cardDiv");
+    div.style.display = "block";
+    return div;
+}
+
+
 
