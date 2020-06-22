@@ -50,7 +50,7 @@ function populateSidebar(statesArray) {                             // Try to br
         innerDiv.setAttribute("class", "panel");
         innerDiv.setAttribute("id", state);
         innerBtn.setAttribute("class", "accordionBtn");
-        
+
         btn.innerText = state;
         innerBtn.innerText = "Add a new police department";
 
@@ -95,7 +95,21 @@ function handleForm() {
 
     form.addEventListener("submit", function(event){
         event.preventDefault();
-        console.log(event.target[0].value);    
-    });
+        startUp.fetchCreateNewReview()
+        .then(response => {
+            newPd = new PoliceDepartment(response);
+            const reviewArr = Array.from(newPd.reviews);
+            const newReview = new Review(reviewArr.pop());
+            const reviewDiv = document.getElementById("reviews");
+            const reviewPTag = newReview.reviewDivMaker;
+            reviewDiv.appendChild(reviewPTag);
+            reviewDiv.style.display = "block";
+            const commentor = document.getElementById("commentor");
+            const comment = document.getElementById("comment");
+
+            commentor.value = "";
+            comment.value = "";
+        })        
+    })
 }
 
