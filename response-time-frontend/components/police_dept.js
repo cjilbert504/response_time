@@ -30,7 +30,7 @@ class PoliceDepartment {
         const h5 = this.createH5;
         
         const hArray = [];
-        hArray.push(h1, h2, h3, h5, reviewDiv);
+        hArray.push(h1, h2, h3, h5);
         hArray.forEach(h => div.appendChild(h));
         
         main.appendChild(div);
@@ -73,6 +73,17 @@ class PoliceDepartment {
         })        
         return reviewDiv;
     }
+
+    get addIdToForm() {
+        const form = document.getElementById("submit");
+        const hiddenInput = document.createElement("input");
+        hiddenInput.setAttribute("type", "hidden");
+        hiddenInput.setAttribute("id", "hidden");
+        hiddenInput.setAttribute("value", this.id);
+        form.appendChild(hiddenInput);
+        form.style.display = "block";
+        return form;
+    }  
 
 }
 
