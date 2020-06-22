@@ -16,7 +16,7 @@ function init() {
     });
 }
 
-function expandSidebarBtns() {  
+function expandSidebarBtns() {                                      // Try to refactor this code
     const acc = document.getElementsByClassName("accordion");
     for (let i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function() {
@@ -31,7 +31,7 @@ function expandSidebarBtns() {
     }
 }
 
-function populateSidebar(statesArray) {
+function populateSidebar(statesArray) {                             // Try to break this into smaller functions and possibly refactor
     const div = document.getElementById("sidebar");
     statesArray.forEach(state => {
         const btn = document.createElement("button");
@@ -62,22 +62,29 @@ function getPdDetailInfo() {
             apiShow.fetchPdDetails(pdId)
             .then(pd => {
                 const cardDiv = document.getElementById("cardDiv");
+
                 if (cardDiv) {
                     const main = document.getElementById("main");
+                    const form = document.getElementById("submit");
+                    const hiddenField = document.getElementById("hidden");
+
                     main.removeChild(cardDiv);
+                    form.removeChild(hiddenField);
                 }
                 newPd = new PoliceDepartment(pd)
                 newPd.detailView;       
+                newPd.addIdToForm;       
             })
         })
     })
 }
 
 function handleForm() {
-    let form = document.getElementById("submit");
+    const form = document.getElementById("submit");
+
     form.addEventListener("submit", function(event){
         event.preventDefault();
         console.log(event.target[0].value);    
-      });
+    });
 }
 
