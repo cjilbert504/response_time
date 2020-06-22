@@ -10,4 +10,12 @@ class Review {
         reviewPTag.innerText = `${this.commentor} says: ${this.comment}`
         return reviewPTag;
     }
+
+    get addToReviews() {
+        const reviewDiv = document.getElementById("reviews");
+        const reviewPTag = this.reviewDivMaker;
+        reviewDiv.appendChild(reviewPTag);
+        reviewDiv.style.display = "block";
+        return reviewDiv;
+    }
 }

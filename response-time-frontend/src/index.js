@@ -97,15 +97,13 @@ function handleForm() {
         event.preventDefault();
         startUp.fetchCreateNewReview()
         .then(response => {
+            const commentor = document.getElementById("commentor");
+            const comment = document.getElementById("comment");
+            
             newPd = new PoliceDepartment(response);
             const reviewArr = Array.from(newPd.reviews);
             const newReview = new Review(reviewArr.pop());
-            const reviewDiv = document.getElementById("reviews");
-            const reviewPTag = newReview.reviewDivMaker;
-            reviewDiv.appendChild(reviewPTag);
-            reviewDiv.style.display = "block";
-            const commentor = document.getElementById("commentor");
-            const comment = document.getElementById("comment");
+            newReview.addToReviews;
 
             commentor.value = "";
             comment.value = "";
