@@ -105,6 +105,12 @@
   margin: -20px 0px 0px 0px;
 }
 
+.form:hover {
+  border-style: solid;
+  border-width: 3px;
+  border-color: #2874A6;
+}
+
 .form-field-name {
   border-radius: 10px;
   font-size: 26px;
@@ -165,6 +171,12 @@
   padding-left: 10px;
   width: 675px;
   background-color: rgb(253, 251, 239);
+}
+
+.reviews:hover {
+  border-style: solid;
+  border-width: 3px;
+  border-color: #2874A6;
 }
 
 .departments:hover {
