@@ -8,6 +8,7 @@ class Review {
     get reviewDivMaker() {
         const reviewPTag = document.createElement("p");
         reviewPTag.innerText = `${this.commentor} says: ${this.comment}`
+        reviewPTag.style.color = "#f36f6f"
         return reviewPTag;
     }
 

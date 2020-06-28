@@ -43,24 +43,28 @@ class PoliceDepartment {
     get createH1() {
         const h1 = document.createElement("h1");
         h1.innerText = this.name;
+        h1.style.color = "#2874A6"
         return h1;
     }
 
     get createH2() {
         const h2 = document.createElement("h2");
         h2.innerText = this.address;
+        h2.style.color = "#f36f6f"
         return h2;
     }
 
     get createH3() {
         const h3 = document.createElement("h3");
         h3.innerText = `${this.city}, ${this.state}`;
+        h3.style.color = "#f36f6f"
         return h3;
     }
 
     get createH5() {
         const h5 = document.createElement("h5");
         h5.innerText = this.phone_number;
+        h5.style.color = "#f36f6f"
         return h5;
     }
 
