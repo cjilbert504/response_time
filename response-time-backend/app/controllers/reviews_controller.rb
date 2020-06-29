@@ -13,8 +13,8 @@ class ReviewsController < ApplicationController
     def create
         police_department = PoliceDepartment.find_by(id: params[:review][:police_department_id])
         police_department.reviews.build(review_params)
-        police_department.save
-        render json: police_department
+        review = police_department.reviews.last
+        render json: police_department.save ? police_department : {message: review.errors.messages[:invalid]}
     end
 
     private 
