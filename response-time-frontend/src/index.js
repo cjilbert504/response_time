@@ -101,6 +101,11 @@ function handleForm() {
         event.preventDefault();
         startUp.fetchCreateNewReview()
         .then(response => {
+            console.log(response);
+            
+            if (response.message) {
+                alert(response.message)
+            } else {
             const commentor = document.getElementById("commentor");
             const comment = document.getElementById("comment");
             
@@ -111,6 +116,7 @@ function handleForm() {
 
             commentor.value = "";
             comment.value = "";
+            }
         })        
     })
 }
