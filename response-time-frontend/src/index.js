@@ -48,17 +48,13 @@ function populateSidebar(statesArray) {
     statesArray.forEach(state => {
         const btn = document.createElement("button");
         const innerDiv = document.createElement("div");
-        // const innerBtn = document.createElement("button");
 
         btn.setAttribute("class", "accordion");
         innerDiv.setAttribute("class", "panel");
         innerDiv.setAttribute("id", state);
-        // innerBtn.setAttribute("class", "accordionBtn");
 
         btn.innerText = state;
-        // innerBtn.innerText = "Add a new police department";
 
-        // innerDiv.appendChild(innerBtn);
         div.appendChild(btn);
         div.appendChild(innerDiv);
         return div;
