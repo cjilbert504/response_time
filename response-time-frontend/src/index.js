@@ -61,35 +61,6 @@ function populateSidebar(statesArray) {
     })
 }
 
-function getPdDetailInfo() {
-    const pTags = Array.from(document.getElementsByClassName("departments"));
-    
-    pTags.map(p => {
-        p.addEventListener("click", (e) => {
-            const pdId = e.target.dataset.id;
-            const apiShow = new ApiAdapter;
-            apiShow.fetchPdDetails(pdId)
-            .then(pd => {
-                const cardDiv = document.getElementById("cardDiv");
-
-                if (cardDiv) {
-                    const main = document.getElementById("main");
-                    const form = document.getElementById("submit");
-                    const hiddenField = document.getElementById("hidden");
-                    const reviewDiv = document.getElementById("reviews");
-
-                    main.removeChild(cardDiv);
-                    main.removeChild(reviewDiv);
-                    form.removeChild(hiddenField);
-                }
-                newPd = new PoliceDepartment(pd)
-                newPd.detailView;       
-                newPd.addIdToForm;       
-            })
-        })
-    })
-}
-
 function handleForm() {
     const form = document.getElementById("submit");
 
