@@ -74,7 +74,7 @@ function handleForm() {
             const commentor = document.getElementById("commentor");
             const comment = document.getElementById("comment");
             
-            newPd = new PoliceDepartment(response);
+            const newPd = new PoliceDepartment(response);
             const reviewArr = Array.from(newPd.reviews);
             const newReview = new Review(reviewArr.pop());
             newReview.addToReviews;
