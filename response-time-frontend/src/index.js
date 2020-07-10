@@ -42,21 +42,7 @@ function expandSidebarBtns() {
 
 function populateSidebar(statesArray) {                             
     const div = document.getElementById("sidebar");
-
-    statesArray.forEach(state => {
-        const btn = document.createElement("button");
-        const innerDiv = document.createElement("div");
-
-        btn.setAttribute("class", "accordion");
-        innerDiv.setAttribute("class", "panel");
-        innerDiv.setAttribute("id", state);
-
-        btn.innerText = state;
-
-        div.appendChild(btn);
-        div.appendChild(innerDiv);
-        return div;
-    })
+    statesArray.forEach(state => addStatesToSidebar(div, state))
 }
 
 function handleForm() {
@@ -66,23 +52,53 @@ function handleForm() {
         event.preventDefault();
         startUp.fetchCreateNewReview()
         .then(response => {
-            console.log(response);
-            
+          
             if (response.message) {
                 alert(response.message)
             } else {
-            const commentor = document.getElementById("commentor");
-            const comment = document.getElementById("comment");
-            
-            const newPd = new PoliceDepartment(response);
-            const reviewArr = Array.from(newPd.reviews);
-            const newReview = new Review(reviewArr.pop());
-            newReview.addToReviews;
-
-            commentor.value = "";
-            comment.value = "";
+                renderNewReview(response);
             }
         })        
     })
+}
+
+function addStatesToSidebar(div, state) {
+    const btn = document.createElement("button");
+    const innerDiv = document.createElement("div");
+
+    btn.setAttribute("class", "accordion");
+    innerDiv.setAttribute("class", "panel");
+    innerDiv.setAttribute("id", state);
+
+    btn.innerText = state;
+
+    div.appendChild(btn);
+    div.appendChild(innerDiv);
+
+    return div;
+}
+
+function renderNewReview(response) {
+    const commentor = document.getElementById("commentor");
+    const comment = document.getElementById("comment");
+
+    const newPd = new PoliceDepartment(response);
+    const reviewArr = Array.from(newPd.reviews);
+    const newReview = new Review(reviewArr.pop());
+
+    newReview.addToReviews;
+    commentor.value = "";
+    comment.value = "";
+}
+
+function removeCardDiv() {
+    const main = document.getElementById("main");
+    const form = document.getElementById("submit");
+    const hiddenField = document.getElementById("hidden");
+    const reviewDiv = document.getElementById("reviews");
+    
+    main.removeChild(cardDiv);
+    main.removeChild(reviewDiv);
+    form.removeChild(hiddenField);
 }
 

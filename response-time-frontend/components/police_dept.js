@@ -100,8 +100,6 @@ class PoliceDepartment {
 
 }
 
-
-
 function createCardDiv() {
     const div = document.createElement("div");
 
@@ -124,14 +122,7 @@ function getPdDetailInfo() {
                 const cardDiv = document.getElementById("cardDiv");
 
                 if (cardDiv) {
-                    const main = document.getElementById("main");
-                    const form = document.getElementById("submit");
-                    const hiddenField = document.getElementById("hidden");
-                    const reviewDiv = document.getElementById("reviews");
-
-                    main.removeChild(cardDiv);
-                    main.removeChild(reviewDiv);
-                    form.removeChild(hiddenField);
+                    removeCardDiv();
                 }
                 newPd = new PoliceDepartment(pd)
                 newPd.detailView;       
