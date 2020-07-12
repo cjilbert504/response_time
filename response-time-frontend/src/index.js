@@ -11,7 +11,7 @@ function init() {
     startUp.fetchPd("police_departments")
     .then(pds => {
         addPdsToSidebar(pds)
-        getPdDetailInfo();
+        PoliceDepartment.getPdDetailInfo();
     });
 }
 
