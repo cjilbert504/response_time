@@ -102,3 +102,45 @@ function removeCardDiv() {
     form.removeChild(hiddenField);
 }
 
+function addSortBtn(reviews){
+    const reviewDiv = document.getElementById("reviews");
+    const sortBtn = document.createElement("button");
+    sortBtn.innerText = "Sort"
+    reviewDiv.appendChild(sortBtn);
+
+    sortBtn.addEventListener("click", function() {
+       let sorted = reviews.sort(compare)
+
+       while (reviewDiv.firstChild){
+           reviewDiv.removeChild(reviewDiv.firstChild)
+       }
+
+       sorted.forEach(review => {
+           const p = document.createElement("p")
+           p.innerText = `${review.commentor} says: ${review.comment}`
+           p.style.color = "#f36f6f"
+
+           reviewDiv.appendChild(p)
+           reviewDiv.appendChild(sortBtn);
+       })
+   })
+    return reviewDiv;
+}
+
+function compare(a, b) {
+    let first = a.id;
+    let second = b.id;
+
+    let comparison = 0
+    if(first > second) {
+        comparison = 1
+    } else if (first < second) {
+        comparison = -1
+    }
+    if(comparison === 1){
+        return comparison * -1
+    } else {
+        return comparison
+    }
+}
+

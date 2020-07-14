@@ -8,7 +8,7 @@ class PoliceDepartment {
         this.reviews = reviews
         this.state = state
     }
-
+    
     static getPdDetailInfo() {
         const pTags = Array.from(document.getElementsByClassName("departments"));
         
@@ -25,7 +25,9 @@ class PoliceDepartment {
                     }
                     newPd = new PoliceDepartment(pd)
                     newPd.detailView;       
-                    newPd.addIdToForm;       
+                    newPd.addIdToForm; 
+ 
+                    addSortBtn(newPd.reviews)     
                 })
             })
         })
@@ -131,5 +133,4 @@ function createCardDiv() {
 
     return div;
 }
-
 

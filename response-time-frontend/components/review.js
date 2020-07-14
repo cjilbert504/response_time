@@ -18,5 +18,6 @@ class Review {
         reviewDiv.appendChild(reviewPTag);
         reviewDiv.style.display = "block";
         return reviewDiv;
+
     }
 }
